@@ -1,6 +1,5 @@
-package ru.gb.gbshopmart.entity.common;
+package ru.gb.gbshopthymeleaf.entity.common;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

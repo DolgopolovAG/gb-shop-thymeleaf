@@ -1,11 +1,11 @@
-package ru.gb.gbshopmart.entity;
+package ru.gb.gbshopthymeleaf.entity;
 
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import ru.gb.gbshopmart.entity.common.InfoEntity;
+import ru.gb.gbshopthymeleaf.entity.common.InfoEntity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
