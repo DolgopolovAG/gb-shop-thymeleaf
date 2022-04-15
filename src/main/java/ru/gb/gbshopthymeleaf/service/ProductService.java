@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import ru.gb.gbshopthymeleaf.dao.ProductDao;
 import ru.gb.gbshopthymeleaf.entity.Product;
-import ru.gb.gbshopthymeleaf.entity.enums.Status;
+import ru.gb.gbapi.common.enums.Status;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
@@ -29,7 +29,7 @@ public class ProductService {
             if (productFromDbOptional.isPresent()) {
                 Product productFromDb = productFromDbOptional.get();
                 productFromDb.setTitle(product.getTitle());
-                productFromDb.setDate(product.getDate());
+                productFromDb.setManufactureDate(product.getManufactureDate());
                 productFromDb.setCost(product.getCost());
                 productFromDb.setStatus(product.getStatus());
                 return productDao.save(productFromDb);
@@ -68,7 +68,7 @@ public class ProductService {
     public void disableById(Long id) {
         productDao.findById(id).ifPresent(
                 p -> {
-                    p.setStatus(Status.DISABLE);
+                    p.setStatus(Status.DISABLED);
                     productDao.save(p);
                 }
         );

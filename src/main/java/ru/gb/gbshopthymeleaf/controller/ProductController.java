@@ -58,9 +58,6 @@ public class ProductController {
     @PostMapping
     @PreAuthorize("hasAnyAuthority('product.create', 'product.update')")
     public String saveProduct(Product product) {
-        if(product.getDate() == null)
-            product.setDate(LocalDate.of(2022,2,1));
-
         productService.save(product);
         return "redirect:/product/all";
     }

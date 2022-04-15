@@ -9,7 +9,8 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.validation.annotation.Validated;
-import ru.gb.gbshopthymeleaf.entity.enums.Status;
+import ru.gb.gbapi.common.enums.Status;
+import ru.gb.gbshopthymeleaf.entity.common.InfoEntity;
 
 
 import javax.persistence.*;
@@ -18,57 +19,60 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Set;
 
+
 @Setter
 @Getter
-@AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Entity
-@Table(name = "product")
+@Table (name = "product")
 @EntityListeners(AuditingEntityListener.class)
-public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Product extends InfoEntity {
+
+    @Column(name = "title")
     private String title;
+    @Column(name = "cost")
     private BigDecimal cost;
     @Column(name = "manufacture_date")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate date;
+    private LocalDate manufactureDate;
+    @ManyToOne
+    @JoinColumn(name = "manufacturer_id")
+    private Manufacturer manufacturer;
+
+    @ManyToMany
+    @JoinTable(
+            name = "product_category",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id")
+    )
+    private Set<Category> categories;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private Status status;
 
-    @Version
-    @Column(name = "VERSION")
-    private int version;
-    @CreatedBy
-    @Column(name = "CREATED_BY", updatable = false)
-    private String createdBy;
-    @CreatedDate
-    @Column(name = "CREATED_DATE", updatable = false)
-    private LocalDateTime createdDate;
-    @LastModifiedBy
-    @Column(name = "LAST_MODIFIED_BY")
-    private String lastModifiedBy;
-    @LastModifiedDate
-    @Column(name = "LAST_MODIFIED_DATE")
-    private LocalDateTime lastModifiedDate;
-
-    @ManyToMany
-    @JoinTable(name = "cart_product",
-            joinColumns = @JoinColumn(name = "product_id"),
-            inverseJoinColumns = @JoinColumn(name = "cart_id"))
-    private Set<Cart> carts;
-
     @Override
     public String toString() {
         return "Product{" +
-                "id=" + id +
+                "id=" + getId() +
                 ", title='" + title + '\'' +
                 ", cost=" + cost +
-                ", date=" + date +
-                '}';
+                ", manufactureDate=" + manufactureDate +
+//                ", manufacturer=" + manufacturer.getName() +
+                "}\n";
+    }
+
+    @Builder
+
+    public Product(Long id, int version, String createdBy, LocalDateTime createdDate, String lastModifiedBy,
+                   LocalDateTime lastModifiedDate, String title, BigDecimal cost, LocalDate manufactureDate,
+                   Manufacturer manufacturer, Set<Category> categories, Status status) {
+        super(id, version, createdBy, createdDate, lastModifiedBy, lastModifiedDate);
+        this.title = title;
+        this.cost = cost;
+        this.manufactureDate = manufactureDate;
+        this.manufacturer = manufacturer;
+        this.categories = categories;
+        this.status = status;
     }
 }
+
