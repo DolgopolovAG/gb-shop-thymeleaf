@@ -1,0 +1,9 @@
+-- alter table PRODUCT add column  STATUS VARCHAR(20)    NOT NULL DEFAULT 'ACTIVE'
+-- --
+--
+-- alter table product
+--     alter column manufacture_date set default '01/01/2022';
+--
+--
+-- alter table product
+--     rename to product_old;
