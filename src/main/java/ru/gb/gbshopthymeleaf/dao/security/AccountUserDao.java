@@ -1,7 +1,7 @@
 package ru.gb.gbshopthymeleaf.dao.security;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.gb.gbthymeleafwinter.entity.security.AccountUser;
+import ru.gb.gbshopthymeleaf.entity.security.AccountUser;
 
 import java.util.Optional;
 

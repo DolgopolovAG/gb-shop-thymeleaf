@@ -5,10 +5,10 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import ru.gb.gbthymeleafwinter.entity.Cart;
-import ru.gb.gbthymeleafwinter.entity.Product;
-import ru.gb.gbthymeleafwinter.service.CartService;
-import ru.gb.gbthymeleafwinter.service.ProductService;
+import ru.gb.gbshopthymeleaf.entity.Cart;
+import ru.gb.gbshopthymeleaf.entity.Product;
+import ru.gb.gbshopthymeleaf.service.CartService;
+import ru.gb.gbshopthymeleaf.service.ProductService;
 
 import java.time.LocalDate;
 

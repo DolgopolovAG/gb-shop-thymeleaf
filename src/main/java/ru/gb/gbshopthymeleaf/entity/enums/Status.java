@@ -1,4 +1,4 @@
-package ru.gb.gbshopthymeleaf.enums;
+package ru.gb.gbshopthymeleaf.entity.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

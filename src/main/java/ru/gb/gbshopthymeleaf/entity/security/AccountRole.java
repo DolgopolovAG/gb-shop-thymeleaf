@@ -1,4 +1,4 @@
-package ru.gb.gbshopthymeleaf.security;
+package ru.gb.gbshopthymeleaf.entity.security;
 
 import lombok.*;
 

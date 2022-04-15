@@ -40,7 +40,7 @@
         </div>
         <div class="col-md-8">
             <select class="form-select" aria-label="Default select example" th:field="*{status}">
-                <option th:each="statusValue : ${T(ru.gb.gbthymeleafwinter.entity.enums.Status).values()}"
+                <option th:each="statusValue : ${T(ru.gb.gbshopthymeleaf.entity.enums.Status).values()}"
                         th:value="${statusValue.name()}"
                         th:text="${statusValue.title}"></option>
             </select>
