@@ -1,7 +1,7 @@
 package ru.gb.gbshopthymeleaf.web.dto.mapper;
 
 import org.mapstruct.Mapper;
-import ru.gb.gbapi.category.dto.CategoryDto;
+import ru.gb.api.category.dto.CategoryDto;
 import ru.gb.gbshopthymeleaf.entity.Category;
 
 @Mapper

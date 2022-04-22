@@ -2,8 +2,8 @@ package ru.gb.gbshopthymeleaf.web.dto.mapper;
 
 import org.mapstruct.Context;
 import org.mapstruct.Mapper;
-import ru.gb.gbapi.category.dto.CategoryDto;
-import ru.gb.gbapi.product.dto.ProductDto;
+import ru.gb.api.category.dto.CategoryDto;
+import ru.gb.api.product.dto.ProductDto;
 import ru.gb.gbshopthymeleaf.entity.Product;
 
 import java.util.NoSuchElementException;

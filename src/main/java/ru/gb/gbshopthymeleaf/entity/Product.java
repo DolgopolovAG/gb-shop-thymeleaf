@@ -9,7 +9,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.validation.annotation.Validated;
-import ru.gb.gbapi.common.enums.Status;
+import ru.gb.api.common.enums.Status;
 import ru.gb.gbshopthymeleaf.entity.common.InfoEntity;
 
 

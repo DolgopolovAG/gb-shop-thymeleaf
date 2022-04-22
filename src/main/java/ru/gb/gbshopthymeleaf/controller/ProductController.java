@@ -14,7 +14,7 @@ import java.time.LocalDate;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/product")
+//@RequestMapping("/product")
 public class ProductController {
 
     private final ProductService productService;

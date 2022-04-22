@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import ru.gb.gbshopthymeleaf.dao.ProductDao;
 import ru.gb.gbshopthymeleaf.entity.Product;
-import ru.gb.gbapi.common.enums.Status;
+import ru.gb.api.common.enums.Status;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
