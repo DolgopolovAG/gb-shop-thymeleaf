@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.gb.gbshopthymeleaf.entity.Cart;
 import ru.gb.gbshopthymeleaf.entity.Product;
+import ru.gb.gbshopthymeleaf.entity.security.AccountUser;
 import ru.gb.gbshopthymeleaf.service.CartService;
 import ru.gb.gbshopthymeleaf.service.ProductService;
 
@@ -99,8 +100,6 @@ public class ProductController {
     public Cart getCurrentCart(){
         return cartService.findById(1L); // создана одна корзина
     }
-
-
 
 
 }
